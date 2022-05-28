@@ -11,11 +11,9 @@ while True :
     l_g=np.array([32,94,132])
     u_g=np.array([179,255,255])
     mask = cv2.inRange(hsv, l_g, u_g)
-
     res=cv2.bitwise_and(frame,frame, mask=mask)
     f=frame-res
     green_screen=np.where(f==0,image,f)
-  
     # cv2.imshow("Frame", frame)  #imshow has no sound 
     # cv2.imshow("Mask",mask)
     # cv2.imshow("RES",res)
@@ -27,7 +25,6 @@ while True :
         break
 video.release()
 cv2.destroyAllWindows() #Window that opend up will be closed up - deallocate all the resources
-
 
  
 
